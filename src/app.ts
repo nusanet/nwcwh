@@ -37,6 +37,10 @@ app.use(
   })
 );
 
+app.get("/", (_req: Request, res: Response) => {
+  res.send("OK");
+});
+
 app.get(WEBHOOK_ENDPOINT, (req: Request, res: Response) => {
   if (
     req.query["hub.mode"] === "subscribe" &&
